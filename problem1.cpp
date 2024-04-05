@@ -34,7 +34,7 @@ public:
             newPresent->next = current->next;
             current->next = newPresent;
         }
-        std::cout << "Present " << tag << " added to the list." << std::endl;
+        std::cout << "Present #" << tag << " added." << std::endl;
     }
 
     bool removePresent(int tag) {
@@ -74,35 +74,34 @@ public:
 
 void writeThankYouNote(ConcurrentLinkedList& list, int tag) {
     if (list.removePresent(tag)) {
-        // Simulate writing the note
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
         std::cout << "Thank you " << tag << "!" << std::endl;
     }
 }
 
 void ServantWork(ConcurrentLinkedList& list, int start, int end) {
-    for (int tag = start; tag <= end; tag++) {
-        if (tag % 2 == 0) {
-            list.addPresent(tag);
-        } else {
-            writeThankYouNote(list, tag);
-        }
+    for (int tag = start; tag <= end; ++tag) {
+        list.addPresent(tag);
+    }
+    for (int tag = start; tag <= end; ++tag) {
+        writeThankYouNote(list, tag);
     }
 }
 
 int main() {
     ConcurrentLinkedList presentsList;
     std::vector<std::thread> servants;
-    int num_servants=4;
-    int presents=100;
-
-    // Initialize and start threads (servants)
-    int presents_per_servant = presents / num_servants;
+    int num_servants = 4;
+    int presents = 100;
+    
+    int presents_per_servant = (presents + num_servants - 1) / num_servants;
+    
     for (int i = 0; i < num_servants; ++i) {
-        servants.emplace_back(ServantWork, std::ref(presentsList), i * presents_per_servant, (i + 1) * presents_per_servant - 1);
+        int start = i * presents_per_servant;
+        int end = std::min(start + presents_per_servant - 1, presents - 1);
+        servants.emplace_back(ServantWork, std::ref(presentsList), start, end);
     }
 
-    // Join threads
     for (auto& servant : servants) {
         servant.join();
     }
