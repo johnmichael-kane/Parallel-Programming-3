@@ -1,6 +1,6 @@
 # Parallel-Programming-3
 
-#Problem 1:
+# Problem 1:
 The Minotaur’s birthday party was a success. The Minotaur received a lot of presents
 from his guests. The next day he decided to sort all of his presents and start writing
 “Thank you” cards. Every present had a tag with a unique number that was associated
