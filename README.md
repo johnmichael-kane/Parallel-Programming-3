@@ -38,7 +38,7 @@ presents from his guests.
 
 
 # Problem 2
-ou are tasked with the design of the module responsible for measuring the atmospheric
+You are tasked with the design of the module responsible for measuring the atmospheric
 temperature of the next generation Mars Rover, equipped with a multicore CPU and 8
 temperature sensors. The sensors are responsible for collecting temperature readings at
 regular intervals and storing them in shared memory space. The atmospheric
