@@ -75,5 +75,5 @@ of your program.
 
 ### Run
 Open console and run the following:
-1. `g++ -std=c++11 problem1.cpp -o problem1 -lpthread`
-2. `./problem1`
+1. `g++ -std=c++11 problem2.cpp -o problem1 -lpthread`
+2. `./problem2`
