@@ -63,7 +63,7 @@ void displayExtremes(const std::vector<int>& sortedReadings) {
 }
 
 void compileHourlyReport(int hour, const std::vector<int>& readings) {
-    std::cout << "Hour " << hour + 1 << " Report:\n";
+    std::cout << "\nHour " << hour + 1 << " Report:\n";
     analyzeTemperatureDifferences(readings);
     auto sortedReadings = readings; // copies the readings to sort
     std::sort(sortedReadings.begin(), sortedReadings.end());
