@@ -34,6 +34,22 @@ task. In your test, simulate this concurrent “Thank you” card writing scenar
 dedicating 1 thread per servant and assuming that the Minotaur received 500,000
 presents from his guests.
 
+### Improvements
+In the original prompt given there's a few possible reasons that there's not enough
+'Thank You' cards to account for the presents. One case could simply be that there's not
+enough cards compared to presents but it really doesn't have anything to do with coding,
+most likely either the servants weren't synchronized enough or some 'Thank You' cards, if
+there was not proper allocaiton or organization, could've been used for some of the same
+presents.
+
+### Differences, distinct features
+The difference in my code is the linked list is handled through atomic operations, meaning
+only 1 servant can edit them at a time so there's no chance of a 'Thank You' card being 
+written multipule times. Due to the threads, each of the servants are to work nonstop
+between 'Thank You' cards and tagging presents, and it ensures they complete it in a
+timely manner.
+
+
 ### Run
 
 
