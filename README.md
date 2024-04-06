@@ -52,8 +52,8 @@ timely manner.
 
 ### Run
 Open console and run the following:
-`g++ -std=c++11 problem1.cpp -o problem1 -lpthread`
-`./problem1`
+1. `g++ -std=c++11 problem1.cpp -o problem1 -lpthread`
+2. `./problem1`
 
 
 # Problem 2
@@ -74,3 +74,6 @@ every reading. In your report, discuss the efficiency, correctness, and progress
 of your program.
 
 ### Run
+Open console and run the following:
+1. `g++ -std=c++11 problem1.cpp -o problem1 -lpthread`
+2. `./problem1`
