@@ -51,7 +51,8 @@ timely manner.
 
 
 ### Run
-
+g++ -std=c++11 problem1.cpp -o problem1 -lpthread
+./problem1
 
 # Problem 2
 You are tasked with the design of the module responsible for measuring the atmospheric
